@@ -169,7 +169,7 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree() { //TODO!
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
@@ -185,15 +185,22 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * ### Challenge `getFullNames`
  * 
  * @instructions
- * Implement this function using forEach().
+ * Implement this function using forEach(). //TEST DOESN'T SEEM TO BE WORKING,  TODO
  * 
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  const arrNames = [];
+
+  runners.forEach((item) => {
+    arrNames.push(`${item.last_name}, ${item.first_name}`)
+  });
+
+  return arrNames;
 }
+
 
 /**
  * ### Challenge `firstNamesAllCaps`
