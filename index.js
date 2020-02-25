@@ -169,7 +169,25 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree() { //TODO!
+function processDuplicateFree(list, callback) { 
+
+  const deDupedList = [];
+
+  let isUnique = true;
+  for (let i = 0; i < list.length; i++) {
+    isUnique = true;
+    for (let j = 0; j < deDupedList.length; j++) {
+      if (list[i] === deDupedList[j]){
+        isUnique = false;
+      }
+    }
+  if (isUnique) {
+    deDupedList.push(list[i]);
+  }
+  }
+ 
+
+  return callback(deDupedList);
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
