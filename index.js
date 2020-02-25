@@ -88,12 +88,8 @@ function processLastItem(stringList, callback) {
  * should return 1000.
 */
 function processSum(numberList, callback) {
-  
-  // var sum = 0;
-  // for (let i = 0; i < numberList.length; i++) {
-  //   sum += numberList[i];
-  // }
-  var sum = numberList.reduce((total, currentValue) => {
+
+  let sum = numberList.reduce((total, currentValue) => {
     return total += currentValue;
   },0);
 
@@ -143,15 +139,18 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  let inList = false;
   
-  for (let i = 0; i < list.length; i++) {
-    if (list[i] === item) {
-      inList = true;
-    }
-  }
 
-  return callback(inList);
+  //OLD WAY
+  // let inList = false;
+  
+  // for (let i = 0; i < list.length; i++) {
+  //   if (list[i] === item) {
+  //     inList = true;
+  //   }
+  // }
+
+  return callback(list.includes(item));
 }
 
 /**
